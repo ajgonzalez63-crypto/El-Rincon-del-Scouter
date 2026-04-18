@@ -116,57 +116,60 @@ footer {
 }
 
 /* Sección de Descargas */
-.downloads-section {
-    padding: 60px 5%;
-    background-color: #ffffff;
-    text-align: center;
-}
-
-.subtitle {
-    color: #666;
-    margin-bottom: 40px;
-}
-
 .downloads-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
 }
 
 .download-card {
-    background: #f9f9f9;
-    padding: 30px;
-    border-radius: 15px;
-    border: 1px solid #eee;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    position: relative; /* Importante para el botón oculto */
+    overflow: hidden;
+    transition: all 0.3s ease;
+    text-align: center;
 }
 
-.download-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    border-color: #2e7d32;
-}
-
+/* El icono más pequeño */
 .download-card .icon {
-    font-size: 3rem;
-    margin-bottom: 15px;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* Área del botón (Oculta inicialmente) */
+.action-area {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    margin-top: 15px;
 }
 
 .btn-download {
-    margin-top: auto;
     background: #2e7d32;
     color: white;
-    padding: 10px 20px;
+    padding: 8px 15px;
     text-decoration: none;
-    border-radius: 20px;
-    font-size: 0.9rem;
+    border-radius: 5px;
+    font-size: 0.85rem;
     font-weight: bold;
-    transition: 0.3s;
 }
 
-.btn-download:hover {
-    background: #1b5e20;
+/* EFECTO HOVER: Cuando pasas el ratón por la tarjeta */
+.download-card:hover {
+    border-color: #2e7d32;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.download-card:hover .icon {
+    transform: scale(0.8); /* El icono se encoge un poco al aparecer el botón */
+}
+
+.download-card:hover .action-area {
+    opacity: 1; /* Aparece el botón */
+    transform: translateY(0); /* Sube a su posición original */
 }
